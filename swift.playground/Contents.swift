@@ -1,40 +1,44 @@
 import UIKit
+
+
+
+//let checking={
+//    (id:String)->Bool in
 //
-//enum DivideError:Error{
-//    case cannotzero
-//}
-//
-//func thrFunction(dividend: Int, divisor:Int) throws -> Int{
-//    if divisor==0{
-//        throw DivideError.cannotzero
+//    if id=="user000"{
+//        print("this is blocked user")
+//        return false
 //    }
-//    return (dividend/divisor)
+//    return true
 //}
 //
-//
-//do{
-//    //let result = try thrFunction(dividend: 80, divisor: 6)
-//    let result = try thrFunction(dividend:80, divisor:0)
-//    print(result)
-//}catch{
-//    print(error.localizedDescription)
+
+
+//let no = {() -> Void in
+//    print("It is void closure ! :)")
 //}
-
-
-enum errrror: Error{
-    case cannotzero
+//
+func justEx(_ action:()->Void){
+    action()
 }
 
-func divideSomething (dividend:Int, divisor:Int) throws -> Int{
-    if (divisor==0) {
-        throw errrror.cannotzero
-    }
-    return dividend/divisor
-}
+justEx({()->Void in
+    print("User 001 is blocked!")
+})
 
-do{
-    let result = try divideSomething(dividend: 80, divisor: 10)
-}catch{
-    print(error.localizedDescription)
-}
-
+//
+//func validate(id: String, checking:(String)->Bool)-> Bool{
+//    print("Validating user id....")
+//    let isValid=checking(id)
+//    return isValid
+//}
+//
+//let result=validate(id:"user000", checking:{(id:String)->Bool in
+//    if id == "user000"{
+//        print("this is blocked user")
+//        return false
+//    }
+//    return true
+//})
+// (id:String) 순서 중요하구먼
+// 함수 호출할 때, 클로져를 정의 => inline으로 클로져를 정의한다고 함
