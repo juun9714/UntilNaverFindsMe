@@ -1,44 +1,86 @@
 import UIKit
 
-
-
-//let checking={
-//    (id:String)->Bool in
-//
-//    if id=="user000"{
-//        print("this is blocked user")
-//        return false
+//struct Movie{
+//    var name:String
+//    var progress:Int{
+//        didSet{
+//            print("Now Progress is \(progress)")
+//        }
 //    }
-//    return true
+//
+//    var isDone:Bool{
+//        return progress==100
+//    }
 //}
 //
-
-
-//let no = {() -> Void in
-//    print("It is void closure ! :)")
+//var movie=Movie(name:"Interstella",progress:0)
+//
+//movie.progress=30
+//movie.progress=60
+//movie.progress=90
+//print(movie.isDone)
+//
+//struct Student{
+//    var name:String
+//    var major:String
+//    var knowledge:Double
+//
+//    func FinalExam()->Int{
+//        let temp=(1-knowledge)*100
+//        return Int(100-temp)
+//    }
+//
+//    mutating func Study(){
+//        if knowledge==1{
+//            knowledge=1
+//        }else{
+//            knowledge+=0.1
+//        }
+//    }
 //}
 //
-func justEx(_ action:()->Void){
-    action()
+//var me=Student(name:"June", major: "Software",knowledge: 0.5)
+//print("My final exam score is \(me.FinalExam())")
+//me.Study()
+//print("My final exam score is \(me.FinalExam())")
+//
+
+//
+//let str:String="Hello Swift"
+//
+//print(str.count)
+//print(str.sorted())
+//print(str.split(separator: " "))
+//print(str.uppercased())
+//print(str.hasPrefix("Hi"))
+
+//
+//struct phone{
+//    var name:String
+//
+//    init(){
+//        name="Iphone 12 mini"
+//    }
+//}
+//
+//var myphone=phone()
+//print(myphone.name)
+
+struct History{
+    init(){
+        print("Loading the history of this item...")
+    }
 }
 
-justEx({()->Void in
-    print("User 001 is blocked!")
-})
+struct secondHand{
+    var name:String
+//    var history:History=History()
+    lazy var history:History=History()
+    
+    init(name:String){
+        self.name=name
+    }
+}
 
-//
-//func validate(id: String, checking:(String)->Bool)-> Bool{
-//    print("Validating user id....")
-//    let isValid=checking(id)
-//    return isValid
-//}
-//
-//let result=validate(id:"user000", checking:{(id:String)->Bool in
-//    if id == "user000"{
-//        print("this is blocked user")
-//        return false
-//    }
-//    return true
-//})
-// (id:String) 순서 중요하구먼
-// 함수 호출할 때, 클로져를 정의 => inline으로 클로져를 정의한다고 함
+var item=secondHand(name:"M1 Mcbook Air 13")
+item.history
