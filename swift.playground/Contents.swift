@@ -65,22 +65,42 @@ import UIKit
 //
 //var myphone=phone()
 //print(myphone.name)
+//
+//struct History{
+//    init(){
+//        print("Loading the history of this item...")
+//    }
+//}
+//
+//struct secondHand{
+//    var name:String
+////    var history:History=History()
+//    lazy var history:History=History()
+//
+//    init(name:String){
+//        self.name=name
+//    }
+//}
+//
+//var item=secondHand(name:"M1 Mcbook Air 13")
+//item.history
 
-struct History{
-    init(){
-        print("Loading the history of this item...")
-    }
-}
-
-struct secondHand{
-    var name:String
-//    var history:History=History()
-    lazy var history:History=History()
+struct UserAccount{
+    private var id:String
+    private var bill:Int
+    internal var name:String
     
-    init(name:String){
+    init(id:String, bill:Int, name:String){
+        self.id=id
+        self.bill=bill
         self.name=name
     }
+    
+    func billDescription()->String{
+        return "\(id)'s bill is \(bill)"
+    }
 }
 
-var item=secondHand(name:"M1 Mcbook Air 13")
-item.history
+var me=UserAccount(id: "1234", bill: 500, name: "June")
+me.bill=50000
+print(me.billDescription())
