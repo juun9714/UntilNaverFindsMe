@@ -85,22 +85,123 @@ import UIKit
 //var item=secondHand(name:"M1 Mcbook Air 13")
 //item.history
 
-struct UserAccount{
-    private var id:String
-    private var bill:Int
-    internal var name:String
-    
-    init(id:String, bill:Int, name:String){
-        self.id=id
-        self.bill=bill
+//struct UserAccount{
+//    private var id:String
+//    private var bill:Int
+//    internal var name:String
+//
+//    init(id:String, bill:Int, name:String){
+//        self.id=id
+//        self.bill=bill
+//        self.name=name
+//    }
+//
+//    func billDescription()->String{
+//        return "\(id)'s bill is \(bill)"
+//    }
+//}
+//
+//var me=UserAccount(id: "1234", bill: 500, name: "June")
+//me.bill=50000
+//print(me.billDescription())
+
+//
+//class Dog{
+//    var name:String
+//    var breed:String
+//
+//    init(name:String, breed:String){
+//        self.name=name
+//        self.breed=breed
+//    }
+//
+//    func bark(){
+//        print("Bow Wow !!")
+//    }
+//}
+//
+//
+//class Maltese:Dog{
+//    init(name:String){
+//        super.init(name:name, breed:"Maltese")
+//    }
+//
+//    override func bark(){
+//        print("Mong Mong !")
+//    }
+//}
+//
+//var dog=Dog(name:"Summer",breed:"Cocker Spaniel")
+//var nan=Maltese(name:"nan")
+//
+//dog.bark()
+//print(dog.name+", "+dog.breed)
+//nan.bark()
+//print(nan.name+", "+nan.breed)
+
+//
+//class StudentClass{
+//    //Reference Type
+//    var name:String
+//
+//    init(name:String){
+//        self.name=name
+//    }
+//}
+//
+//struct StudentStruct{
+//    //Value Type
+//    var name:String
+//
+//    init(name:String){
+//        self.name=name
+//    }
+//}
+//
+//var one=StudentClass(name:"Jacob")
+//var two=one
+//two.name="Jay"
+//
+//print(one.name, two.name)
+//
+//var three=StudentStruct(name:"Jacob")
+//var four=three
+//four.name="Jay"
+//
+//print(three.name, four.name)
+
+
+final class Human{
+    var name:String
+    let age:Int
+
+    init(name:String, age:Int){
         self.name=name
+        self.age=age
+    }
+
+    deinit{
+        print("\(name) is now deinitialized.")
+    }
+
+    func born(){
+        print("\(name) is born as \(age) age.")
     }
     
-    func billDescription()->String{
-        return "\(id)'s bill is \(bill)"
+    func changeName(to name:String){
+        self.name=name
     }
 }
 
-var me=UserAccount(id: "1234", bill: 500, name: "June")
-me.bill=50000
-print(me.billDescription())
+//func giveBirth(){
+//    var baby=Human(name:"June", age:25)
+//    baby.born()
+//}
+//
+//giveBirth()
+
+let sean=Human(name:"Sean", age:10)
+print(sean.name)
+sean.changeName(to: "June")
+print(sean.name)
+
